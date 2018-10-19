@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if response["smtp_check"] && !response["disposable"]
       render json: render_message("You can use this email"), status: 200
     else
-      render json: failure_message("This domain does not exist as an SMTP domain"), status: 404
+      render json: render_message("This domain does not exist as an SMTP domain"), status: 404
     end
   end
 
